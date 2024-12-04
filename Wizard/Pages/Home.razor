@@ -2,6 +2,24 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Wizard</h1>
 
-Welcome to your new Fluent Blazor app.
+<FluentWizard>
+    <Steps>
+        <FluentWizardStep Label="Intro">
+            <FluentEditForm Model="IntroModel">
+                Intro
+            </FluentEditForm>
+        </FluentWizardStep>
+        <FluentWizardStep Label="Get started" DeferredLoading>
+            <FluentEditForm Model="GetStartedModel" OnSubmit="@(() => ShowSubmitMessageAsync("GetStarted"))">
+                GetStarted
+            </FluentEditForm>
+        </FluentWizardStep>
+        <FluentWizardStep Label="Set budget">
+            <FluentEditForm Model="SetBudgetModel">
+                SetBudget
+            </FluentEditForm>
+        </FluentWizardStep>
+    </Steps>
+</FluentWizard>
